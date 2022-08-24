@@ -1,15 +1,20 @@
 package com.example.demo.controller;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@RestController
+@Controller
 public class GreetingController {
 	
-	@PostMapping("/greeting")
-	public String greeting(@RequestParam(value = "nome") String nome, @RequestParam(value = "pwd") String pass) {
-		return "test" + nome + "senha " + pass;
+	@GetMapping("/")
+	public String forms (Model model) {
+		return "aulaum";
 	}
+	
+//	@PostMapping("/greeting")
+//	public String greeting(@RequestParam(value = "nome") String nome, @RequestParam(value = "pwd") String pass) {
+//		return "test" + nome + "senha " + pass;
+//	}
 	
 }
