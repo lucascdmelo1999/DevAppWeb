@@ -1,0 +1,33 @@
+body{
+    background: rgba(0, 0, 0 , 0.50) 100%;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+h1{
+    /*largura
+    width: 5px;*/
+    /*altura
+    height: 5px;*/
+    
+    /*margin do top*/
+    margin-top: 10px;
+    /*margin do esqueda*/
+    margin-left: 10px;
+    /*margin do direita*/
+    margin-right: 10px;
+    /*margin de baixo*/
+    margin-bottom: 10px;
+    /*preenchimento (espaçamento dentro do testo)*/
+    padding: 10px;
+    /*display: flex;
+    align-items: center;
+    justify-content: space-around;
+*/
+}

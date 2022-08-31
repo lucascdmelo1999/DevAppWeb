@@ -2,13 +2,25 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>1° Aula - forms com POST</title>
+		<!--CSS LINK EXTERNO-->
+		<link rel='stylesheet' type='text/css' media='screen' href='/src/main/resources/asserts/main.css'>
+		<!--style no head incorporado	
+		<style>
+			.forms{
+				background-color: red;
+			}
+		</style>-->
+	
 	</head>
+	<!-- style inline(DIRETO NA TAG)
+		<body style:"backgound:"red" "> 
+		-->
 	<body>
-		<h1>Formulario autenticação POST</h1>
-		<form>
-			<label>Nome: </label><input type="text" name = "nome" value = "nome"/>
+		<h1 style="font-size:500%;">Formulario autenticação POST</h1>
+		<form class="forms">
+			<label>Nome: </label><input type="text" name = "nome" value = "Exemplo: Lucas"/>
 			</br>
-			<label>Senha: </label><input type="password" name = "pwd" value = "pwd"/>
+			<label>Senha: </label><input type="password" name = "pwd" value = "******"/>
 			</br>
 			<input type="submit" value="Enviar"/>
 			</br>
