@@ -4,43 +4,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculadora</title>
     <link rel="stylesheet" href="../asserts/aularevisao1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    
-    <h1>CAPITULO 1</h1>
-
+    <!--<h1>CAPITULO 1</h1>
     <b><h3>CAPITULO 1.1</h3></b>
-
     <p>é isso aqui msm</p>
-    
     <b><h3>CAPITULO 1.2</h3></b>
-
     <p>é isso aqui msm</p>
-        
     <h1>CAPITULO 2</h1>
-
     <b><h3>CAPITULO 2.1</h3></b>
+    <p>é isso aqui msm</p>-->
+    <div class="topo">
+        <h1>Calculadora</h1>
+    </div>
 
-    <p>é isso aqui msm</p>
+    <div class="calc">
+        <label> Valor 1 </label> <input type="number" name="a" id="chama"> 
 
+        <div class="selec">
+            <label> Operadação: </label> 
+            <select id="ope" >
+                <option value=""></option>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+        </div>
+        
+        <label> Valor 2 </label> <input type="number" name="b">
+        <br>
+        <div class="butt">
+            <button onclick="Calculadora()"> Calcular <i class="fa fa-calculator"></i></button>
+
+            <button onclick="Refresh()"> Refresh <i class="fa fa-refresh" aria-hidden="true"></i></button>
+        </div>
+        
+
+        <span name = "resultado"></span>
+
+        <div class="warning">
+            <span name = "resultadowarning"></span>
+        </div>
+    </div>
+    
+    
     <script>
-        function init(){
+        function Calculadora(){
             var a = document.getElementsByName("a")[0].value;
             var b = document.getElementsByName("b")[0].value;
+            var ope = document.getElementById("ope").value;
+            var result;
+            span = document.getElementsByName("resultado")[0];
+            spanwarning = document.getElementsByName("resultadowarning")[0];              
 
-            if(a == b){
-                alert('a e b são iguais' + a + b);
+            if(ope == "+" && a != "" && b != ""){
+                result = ( "Resultado da soma de " + a + " + " + b + " = " + (parseFloat(a) + parseFloat(b)));
+                span.innerHTML = result;
+                
+            }else if(ope == "-" && a != "" && b != ""){
+                result = ("Resultado da subitração de " + a + " - " + b + " = " + (parseFloat(a) - parseFloat(b)));
+                span.innerHTML = result;
+                
+            }else if(ope == "*" && a != "" && b != ""){
+                result = ("Resultado da multiplicação de " + a + " * " + b + " = " + (parseFloat(a) * parseFloat(b)));
+                span.innerHTML = result;
+                
+            }else if(ope == "/" && a != "" && b != ""){
+                result = ("Resultado da divisão de " + a + " / " + b + " = " + (parseFloat(a) / parseFloat(b)));
+                span.innerHTML = result;
 
+            }else if((ope == "+" && a == "" && b == "") || (ope == "-" && a == "" && b == "") || (ope == "*" && a == "" && b == "") || (ope == "/" && a == "" && b == "")  ||  (ope == "" && a == "" && b == "") || (ope == "" && a == "" && b == "") || (ope == "" && a == "" && b == "") || (ope == "" && a == "" && b == "")  ){
+                result = ("Warning: Preencha os valores e coloque a operação para conseguir calcular");
+                spanwarning.innerHTML = result;
+                
             }else{
-                alert("a e b n saõ iguais");
+                result = ("Warning: Preencha os valores para conseguir calcular");
+                span.innerHTML = result;
             }
+            
         }
 
-    </script>
-    valor 1 <input type="number" name="a" id="">
-    valro 2 <input type="number" name="b" id="">
-    <button onclick="init()"> calcular</button>
+        function Refresh(){
+            window.location.href = 'aularevisao1.html';
+        }
+    </script>   
 </body>
 </html>
